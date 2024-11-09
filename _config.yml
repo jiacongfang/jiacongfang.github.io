@@ -21,7 +21,7 @@ repository               : "jiacongfang/jiacongfang.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Jiacong Fang(方 嘉聪)"
   pronouns         : "he/him"# example: "she/her"  
   bio              : "A third-year undergraduate majoring in Computer Science(Turing Class) in Peking University"

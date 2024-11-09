@@ -16,7 +16,7 @@ My research interest lies in computational photography and computer vision. Feel
 
 In my spare time, I enjoy playing billiards and running. Cute cats are always my favorite. 
 
-**Email**: jiacongfang[at]stu.pku.edu.cn
+**Email**: jiacong_fang[at]stu.pku.edu.cn
 
 # Publications
 Hope to be updated soon.

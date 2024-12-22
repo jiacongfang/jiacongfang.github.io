@@ -1,0 +1,91 @@
+---
+layout: archive
+title: "Photography Works"
+permalink: /photography/
+author_profile: true
+---
+
+Here are some of my photography works, mostly of the cute cats in Peking University. Enjoy!
+
+<div class="slider">
+  <div class="slides">
+    <div class="slide">
+      <img src="/my_photos/cat1_orange.jpg" alt="Description of photo 1">
+    </div>
+    <div class="slide">
+      <img src="/my_photos/cat2.jpg" alt="Description of photo 2">
+    </div>
+    <div class="slide">
+      <img src="/my_photos/cat3.jpg" alt="Description of photo 3">
+    </div>
+    <!-- Add more slides as needed -->
+    <div class="slide">
+      <img src="/my_photos/cat4.jpg" alt="Description of photo 4">
+    </div>
+    <div class="slide">
+      <img src="/my_photos/cat5.jpg" alt="Description of photo 5">
+    </div>
+  </div>
+  <button class="prev" onclick="moveSlides(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlides(1)">&#10095;</button>
+</div>
+
+<style>
+  .slider {
+    position: relative;
+    max-width: 80%;
+    /* Adjust the max-width to make the slider smaller */
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .slide img {
+    max-width: 70%;
+    /* Adjust the max-width to make the images smaller */
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+</style>
+
+<script>
+  let currentSlide = 0;
+
+  function moveSlides(n) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = slides.children.length;
+    currentSlide = (currentSlide + n + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+</script>

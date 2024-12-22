@@ -23,7 +23,7 @@ Research experience
 Teaching experience
 ======
 * Teaching Assistant, Silver Economy and Creative Design, 2024 Fall
-  * Instructor: Prof. Gong Chen
+  * Instructor: Prof. [Gong Chen](https://ipr.pku.edu.cn/jsdw/zzjs/233824.htm)
 
 Note: More details will be updated in the future.
 

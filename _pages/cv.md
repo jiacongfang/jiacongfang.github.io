@@ -20,6 +20,11 @@ Research experience
   * Mentor: Chengxuan Zhu
   * Advisor: Prof. Boxin Shi
 
+Teaching experience
+======
+* Teaching Assistant, Silver Economy and Creative Design, 2024 Fall
+  * Instructor: Prof. Gong Chen
+
 Note: More details will be updated in the future.
 
 

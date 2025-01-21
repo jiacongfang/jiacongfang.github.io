@@ -11,19 +11,25 @@ redirect_from:
 
 Education
 ======
+
 * Undergraduate in Computer Science(Turing Class), 2022-present
   * Yuanpei College, Peking University
 
 Research experience
 ======
+
 * Undergraduate Intern, CameraLab, Peking University, 2024-present
   * Mentor: Chengxuan Zhu
   * Advisor: Prof. Boxin Shi
 
 Teaching experience
 ======
+
 * Teaching Assistant, Silver Economy and Creative Design, 2024 Fall
   * Instructor: Prof. [Gong Chen](https://ipr.pku.edu.cn/jsdw/zzjs/233824.htm)
+
+* Teaching Assistant, Introduction to Computing(C), 2025 Spring
+  * Instructor: Prof. [Meiping Feng](https://ele.pku.edu.cn/info/1023/1997.htm)
 
 Note: More details will be updated in the future.
 

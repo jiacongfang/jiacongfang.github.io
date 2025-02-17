@@ -24,12 +24,11 @@ Research experience
 
 Teaching experience
 ======
-
+* Teaching Assistant, Introduction to Computing(C), 2025 Spring
+  * Instructor: Prof. [Meiping Feng](https://ele.pku.edu.cn/info/1023/1997.htm)
 * Teaching Assistant, Silver Economy and Creative Design, 2024 Fall
   * Instructor: Prof. [Gong Chen](https://ipr.pku.edu.cn/jsdw/zzjs/233824.htm)
 
-* Teaching Assistant, Introduction to Computing(C), 2025 Spring
-  * Instructor: Prof. [Meiping Feng](https://ele.pku.edu.cn/info/1023/1997.htm)
 
 Note: More details will be updated in the future.
 

@@ -12,13 +12,13 @@ redirect_from:
 Education
 ======
 
-* Undergraduate in Computer Science(Turing Class), 2022-present
+* Undergraduate in Computer Science(Turing Class), 2022.9 - present
   * Yuanpei College, Peking University
 
 Research experience
 ======
 
-* Undergraduate Intern, CameraLab, Peking University, 2024-present
+* Undergraduate Intern, CameraLab, Peking University, 2024.9 - present
   * Mentor: Chengxuan Zhu
   * Advisor: Prof. Boxin Shi
 

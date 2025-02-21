@@ -11,9 +11,9 @@ My name is **Jiacong Fang**(方嘉聪 in Chinese), a third-year undergraduate ma
 
 I'm now an undergraduate intern in the [CameraLab](https://camera.pku.edu.cn) of Peking University, supervised by Prof. [Boxin Shi](https://ci.idm.pku.edu.cn). Currently, I'm mentored by [Chengxuan Zhu](https://freebutuselesssoul.github.io) in the lab as well.
 
-My research interest lies in computational photography and computer vision. Feel free to contact me if you have any questions or ideas to discuss.
+My research interest lies in  computer vision and computational photography. Feel free to contact me if you have any questions or ideas to discuss.
 
-In my spare time, I enjoy playing billiards and running. Cute cats are always my favorite. 
+In my spare time, I enjoy playing billiards and running. Cute cats are always my favorite.
 
 **Email**: jiacong_fang[at]stu.pku.edu.cn
 

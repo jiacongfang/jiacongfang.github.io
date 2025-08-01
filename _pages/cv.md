@@ -18,12 +18,14 @@ Education
 Research experience
 ======
 
-* Undergraduate Intern, CameraLab, Peking University, 2024.9 - present
+* Undergraduate Intern, CameraLab, Peking University, 2024.7 - present
   * Mentor: Chengxuan Zhu
   * Advisor: Prof. Boxin Shi
 
 Teaching experience
 ======
+* TA, Probability Theory and Statistics in Information Science, PKU, 2025 Fall
+  * Instructor: Prof. [Rousong Wang](https://cfcs.pku.edu.cn/english/people/faculty/ruosongwang/index.htm)
 * TA, Fundamentals of Artificial Intelligence, PKU, 2025 Spring
   * Instructor: Prof. [Leye Wang](https://wangleye.github.io)
 * TA, Introduction to Computing(C), PKU, 2025 Spring

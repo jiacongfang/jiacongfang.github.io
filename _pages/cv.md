@@ -12,7 +12,7 @@ redirect_from:
 Education
 ======
 
-* Undergraduate in Computer Science(Turing Class), 2022.9 - present
+* Undergraduate in Computer Science(Turing Class), 2022.9 - 2026.7(expected)
   * Yuanpei College, Peking University
 
 Research experience
@@ -26,6 +26,8 @@ Teaching experience
 ======
 * TA, Probability Theory and Statistics in Information Science, PKU, 2025 Fall
   * Instructor: Prof. [Rousong Wang](https://cfcs.pku.edu.cn/english/people/faculty/ruosongwang/index.htm)
+* TA, Introduction to Computing(C), PKU, 2025 Fall
+  * Instructor: Prof. [Yun Ma](https://www.ai.pku.edu.cn/info/1159/2107.htm)
 * TA, Fundamentals of Artificial Intelligence, PKU, 2025 Spring
   * Instructor: Prof. [Leye Wang](https://wangleye.github.io)
 * TA, Introduction to Computing(C), PKU, 2025 Spring

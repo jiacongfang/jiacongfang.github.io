@@ -19,8 +19,13 @@ Research experience
 ======
 
 * Undergraduate Intern, CameraLab, Peking University, 2024.7 - present
-  * Mentor: Chengxuan Zhu
-  * Advisor: Prof. Boxin Shi
+  * Advisor: Prof. [Boxin Shi](https://camera.pku.edu.cn)
+
+Internship
+======
+
+* Imaging Research Engineer Intern(AIGC), VIVO@Shanghai, 2026.1 - present
+  * Advisor: Dr. [Youwei Lyu](https://youweilyu.github.io)
 
 Teaching experience
 ======

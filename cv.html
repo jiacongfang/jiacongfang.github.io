@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CV - Jiacong Fang</title>
+	<link rel="icon" href="assets/icons/cat-icon.jpg" type="image/jpeg">
+    
+	<!-- Tailwind CSS -->
+	<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+	<script>
+		tailwind.config = {
+			darkMode: 'class',
+			theme: {
+				extend: {
+					colors: {
+						primary: '#306998',
+						secondary: '#FFD43B'
+					},
+					borderRadius: {
+						'none': '0px',
+						'sm': '4px',
+						DEFAULT: '8px',
+						'md': '12px',
+						'lg': '16px',
+						'xl': '20px',
+						'2xl': '24px',
+						'3xl': '32px',
+						'full': '9999px',
+						'button': '8px'
+					}
+				}
+			}
+		}
+	</script>
+    
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+	<!-- Remix Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="assets/css/styles.css">
+    
+	<!-- Loading overlay style -->
+	<style>
+	  #loading-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #ffffff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 9999;
+		transition: opacity 0.3s;
+	  }
+	  .dark #loading-overlay {
+		background-color: #1a202c;
+	  }
+	  .loading-spinner {
+		width: 50px;
+		height: 50px;
+		border: 5px solid #e5e7eb;
+		border-top: 5px solid #306998;
+		border-radius: 50%;
+		animation: spin 1s linear infinite;
+	  }
+	  @keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	  }
+	</style>
+</head>
+<body class="bg-white min-h-screen">
+	<!-- Loading overlay -->
+	<div id="loading-overlay">
+	  <div class="loading-spinner"></div>
+	</div>
+
+	<!-- Max-width wrapper -->
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		<header class="w-full">
+			<div id="header-placeholder"></div>
+		</header>
+
+		<main class="container mx-auto px-4 py-8">
+			<h1 class="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Curriculum Vitae</h1>
+
+			<section class="mb-10">
+				<h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Education</h2>
+				<ul class="mt-4 space-y-2">
+					<li class="text-gray-700 dark:text-gray-300">
+						<span class="font-medium">Undergraduate in Computer Science (Turing Class)</span>, Yuanpei College, Peking University
+						<span class="text-sm text-gray-500"> · Sep 2022 – Jul 2026 (expected)</span>
+					</li>
+				</ul>
+			</section>
+
+			<section class="mb-10">
+				<h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Research Experience</h2>
+				<ul class="mt-4 space-y-2">
+					<li class="text-gray-700 dark:text-gray-300">
+						<span class="font-medium">Undergraduate Intern</span>, CameraLab, Peking University
+						<span class="text-sm text-gray-500"> · Jul 2024 – Present</span>
+						<div class="text-sm text-gray-500">Advisor: <a href="https://camera.pku.edu.cn" class="text-primary hover:underline">Prof. Boxin Shi</a></div>
+					</li>
+				</ul>
+			</section>
+
+			<section class="mb-10">
+				<h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Internship</h2>
+				<ul class="mt-4 space-y-2">
+					<li class="text-gray-700 dark:text-gray-300">
+						<span class="font-medium">Imaging Research Engineer Intern (AIGC)</span>, VIVO, Shanghai
+						<span class="text-sm text-gray-500"> · Jan 2026 – Present</span>
+						<div class="text-sm text-gray-500">Advisor: <a href="https://youweilyu.github.io" class="text-primary hover:underline">Dr. Youwei Lyu</a></div>
+					</li>
+				</ul>
+			</section>
+
+			<section class="mb-10">
+				<h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Rewards and Honors</h2>
+				<ul class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+					<li>Hua Tai Securities Technology Scholarship, Peking University, 2025</li>
+					<li>Merit Student, Peking University, 2025</li>
+					<li>Second-class Freshman Scholarship, Peking University, 2022</li>
+				</ul>
+			</section>
+
+			<section class="mb-10">
+				<h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Teaching and Service</h2>
+				<ul class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+					<li>TA, Probability Theory and Statistics in Information Science, PKU, 2025 Fall (Instructor: <a href="https://cfcs.pku.edu.cn/english/people/faculty/ruosongwang/index.htm" class="text-primary hover:underline">Prof. Rousong Wang</a>)</li>
+					<li>TA, Introduction to Computing (C), PKU, 2025 Fall (Instructor: <a href="https://www.ai.pku.edu.cn/info/1159/2107.htm" class="text-primary hover:underline">Prof. Yun Ma</a>)</li>
+					<li>Vice-Chair of Turing Class Student Research Forum, PKU, 2025.05</li>
+					<li>Co-Organizer of CS Frontier Tutorial, CFCS, PKU, 2024.11 – Present</li>
+					<li>TA, Fundamentals of Artificial Intelligence, PKU, 2025 Spring (Instructor: <a href="https://wangleye.github.io" class="text-primary hover:underline">Prof. Leye Wang</a>)</li>
+					<li>TA, Introduction to Computing (C), PKU, 2025 Spring (Instructor: <a href="https://ele.pku.edu.cn/info/1023/1997.htm" class="text-primary hover:underline">Prof. Meiping Feng</a>)</li>
+					<li>TA, Silver Economy and Creative Design, PKU, 2024 Fall (Instructor: <a href="https://ipr.pku.edu.cn/jsdw/zzjs/233824.htm" class="text-primary hover:underline">Prof. Gong Chen</a>)</li>
+				</ul>
+			</section>
+		</main>
+	</div>
+
+	<!-- Scripts -->
+	<script src="scripts/app.js"></script>
+</body>
+</html>

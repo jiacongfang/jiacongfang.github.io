@@ -1,0 +1,39 @@
+<!-- Dark mode toggle and Duck icon - positioned outside max-width -->
+<div class="fixed top-4 sm:top-6 left-4 sm:left-6 z-10 flex items-center space-x-3">
+    <button id="darkModeToggle" class="w-10 h-10 flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">
+        <i class="ri-moon-line text-gray-600 dark:text-gray-400 text-lg"></i>
+    </button>
+</div>
+
+<!-- Mobile menu button - positioned outside max-width -->
+<div class="lg:hidden fixed top-4 right-4 z-10">
+    <button id="mobileMenuToggle" class="w-10 h-10 flex items-center justify-center border border-gray-200 dark:border-gray-700 rounded-md">
+        <i class="ri-menu-line text-gray-600 dark:text-gray-400"></i>
+    </button>
+</div>
+
+<!-- Navigation - inside max-width container -->
+<nav class="relative w-full flex justify-end pt-16 sm:pt-20 pb-12 sm:pb-16 pr-0 sm:pr-4">
+    <!-- Desktop menu - now aligned to the right -->
+    <ul class="hidden lg:flex space-x-8 xl:space-x-12">
+        <li><a href="index.html" class="text-gray-900 dark:text-gray-100 hover:text-primary font-medium">About</a></li>
+        <li><a href="publications.html" class="text-gray-900 dark:text-gray-100 hover:text-primary font-medium">Publications</a></li>
+        <li><a href="cv.html" class="text-gray-900 dark:text-gray-100 hover:text-primary font-medium">CV</a></li>
+        <li><a href="blog.html" class="text-gray-900 dark:text-gray-100 hover:text-primary font-medium">Blog</a></li>
+        <li><a href="life.html" class="text-gray-900 dark:text-gray-100 hover:text-primary font-medium">Moments</a></li>
+    </ul>
+    
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex flex-col items-center justify-center hidden">
+        <button id="mobileMenuClose" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center border border-gray-200 dark:border-gray-700 rounded-md">
+            <i class="ri-close-line text-gray-600 dark:text-gray-400"></i>
+        </button>
+        <ul class="flex flex-col space-y-6 text-center">
+            <li><a href="index.html" class="text-xl text-gray-900 dark:text-gray-100 hover:text-primary font-medium">About</a></li>
+            <li><a href="publications.html" class="text-xl text-gray-900 dark:text-gray-100 hover:text-primary font-medium">Publications</a></li>
+            <li><a href="cv.html" class="text-xl text-gray-900 dark:text-gray-100 hover:text-primary font-medium">CV</a></li>
+            <li><a href="blog.html" class="text-xl text-gray-900 dark:text-gray-100 hover:text-primary font-medium">Blog</a></li>
+            <li><a href="life.html" class="text-xl text-gray-900 dark:text-gray-100 hover:text-primary font-medium">Moments</a></li>
+        </ul>
+    </div>
+</nav>

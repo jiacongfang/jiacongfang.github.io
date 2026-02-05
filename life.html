@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Moment - Jiacong Fang</title>
+    <link rel="icon" href="assets/icons/cat-icon.jpg" type="image/jpeg">
+    
+    <!-- Preload fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Mansalva&family=Montserrat:wght@300;400;500;600&display=swap" as="style">
+    <link rel="preload" href="https://fonts.gstatic.com/s/mansalva/v19/aWB4m0aacbtDfvq5NKliKYtI.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXp-p7K4KLg.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Mansalva&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#306998',
+                        secondary: '#FFD43B'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    },
+                    fontFamily: {
+                        'mansalva': ['Mansalva', 'cursive'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'caveat': ['Caveat', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Remix Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <!-- Dark mode toggle and Duck icon - positioned outside max-width -->
+    <div class="fixed top-4 sm:top-6 left-4 sm:left-6 z-10 flex items-center space-x-3">
+        <button id="darkModeToggle" class="w-10 h-10 flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">
+            <i class="ri-moon-line text-gray-600 dark:text-gray-400 text-lg"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section - Moved outside max-width wrapper -->
+    <section class="relative h-[20vh] w-full bg-cover bg-center bg-no-repeat" style="background-image: url('assets/artwork.jpg');">
+        <!-- Dark overlay to ensure text readability -->
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+            <h1 class="font-mansalva text-4xl md:text-5xl mb-2">Enjoy & Relax</h1>
+            <p class="font-montserrat text-sm md:text-base font-light tracking-wider">A collection of moments</p>
+        </div>
+    </section>
+
+    <!-- Max-width wrapper -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+            <!-- Section 1: Cats -->
+            <section class="mb-20">
+                <h2 class="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-8">Cats in Peking University</h2>
+                <div class="relative max-w-3xl mx-auto">
+                    <div class="carousel-container overflow-hidden">
+                        <div class="carousel-track-cats flex transition-transform duration-500">
+                            <div class="carousel-slide min-w-full">
+                                <div class="aspect-[4/3] w-full max-w-3xl mx-auto">
+                                    <img src="assets/images/life/Cats/cat1_orange.jpg" alt="Cat photo 1" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <div class="carousel-slide min-w-full">
+                                <div class="aspect-[4/3] w-full max-w-3xl mx-auto">
+                                    <img src="assets/images/life/Cats/cat3.jpg" alt="Cat photo 3" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <div class="carousel-slide min-w-full">
+                                <div class="aspect-[4/3] w-full max-w-3xl mx-auto">
+                                    <img src="assets/images/life/Cats/cat4.jpg" alt="Cat photo 4" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <div class="carousel-slide min-w-full">
+                                <div class="aspect-[4/3] w-full max-w-3xl mx-auto">
+                                    <img src="assets/images/life/Cats/cat5.jpg" alt="Cat photo 5" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-prev-cats absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 dark:bg-gray-800/50 p-1.5 hover:bg-white/70 dark:hover:bg-gray-800/70 transition-colors">
+                        <i class="ri-arrow-left-s-line text-lg"></i>
+                    </button>
+                    <button class="carousel-next-cats absolute right-2 top-1/2 -translate-y-1/2 bg-white/50 dark:bg-gray-800/50 p-1.5 hover:bg-white/70 dark:hover:bg-gray-800/70 transition-colors">
+                        <i class="ri-arrow-right-s-line text-lg"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Credits -->
+            <div class="mt-8 mb-4 text-right">
+                <p class="text-sm text-gray-500 dark:text-gray-400 font-montserrat">
+                    Photo credits: Jiacong Fang
+                </p>
+            </div>
+
+            <!-- Quote -->
+            <!-- <div class="mt-20 mb-16 relative">
+                <blockquote class="mt-12 text-2xl md:text-3xl italic text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto leading-relaxed font-caveat">
+                    <span class="text-3xl md:text-4xl text-primary dark:text-secondary font-mansalva leading-none">"</span>
+                    When words become unclear, I shall focus with photographs.<br>
+                    When images become inadequate, I shall be content with silence.
+                    <span class="text-3xl md:text-4xl text-primary dark:text-secondary font-mansalva leading-none">"</span>
+                </blockquote>
+                <div class="mt-6 text-center">
+                    <p class="text-base text-gray-500 dark:text-gray-400 font-montserrat tracking-wider">— Ansel Adams</p>
+                </div>
+            </div> -->
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            function initializeCarousel(track, slides, prevButton, nextButton) {
+                if (!track || !slides || slides.length === 0 || !prevButton || !nextButton) {
+                    return;
+                }
+
+                let currentIndex = 0;
+                const slideCount = slides.length;
+
+                // Clone first and last slides for infinite loop
+                const firstSlide = slides[0].cloneNode(true);
+                const lastSlide = slides[slideCount - 1].cloneNode(true);
+                track.appendChild(firstSlide);
+                track.insertBefore(lastSlide, slides[0]);
+
+                // Set initial position
+                currentIndex = 1;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                track.style.transition = 'transform 0.5s ease-in-out';
+
+                function updateSlidePosition(animate = true) {
+                    track.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+
+                function handleTransitionEnd() {
+                    if (currentIndex === 0) {
+                        currentIndex = slideCount;
+                        updateSlidePosition(false);
+                    } else if (currentIndex === slideCount + 1) {
+                        currentIndex = 1;
+                        updateSlidePosition(false);
+                    }
+                }
+
+                prevButton.addEventListener('click', () => {
+                    currentIndex--;
+                    updateSlidePosition();
+                });
+
+                nextButton.addEventListener('click', () => {
+                    currentIndex++;
+                    updateSlidePosition();
+                });
+
+                track.addEventListener('transitionend', handleTransitionEnd);
+            }
+
+            // Cats carousel
+            initializeCarousel(
+                document.querySelector('.carousel-track-cats'),
+                document.querySelectorAll('.carousel-track-cats .carousel-slide'),
+                document.querySelector('.carousel-prev-cats'),
+                document.querySelector('.carousel-next-cats')
+            );
+        });
+    </script>
+</body>
+</html> 

@@ -142,6 +142,80 @@ function initializeMobileMenu() {
     });
 }
 
+function initializePublicationBibtex() {
+    if (document.documentElement.dataset.publicationBibtexReady === 'true') return;
+    document.documentElement.dataset.publicationBibtexReady = 'true';
+
+    document.addEventListener('click', async function(event) {
+        const toggle = event.target.closest('.publication-bibtex-toggle');
+        if (toggle) {
+            const panelId = toggle.getAttribute('aria-controls');
+            const panel = panelId ? document.getElementById(panelId) : null;
+            if (!panel) return;
+
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!isExpanded));
+            panel.hidden = isExpanded;
+            return;
+        }
+
+        const copyButton = event.target.closest('.publication-copy-bibtex');
+        if (!copyButton) return;
+
+        const targetId = copyButton.getAttribute('data-copy-target');
+        const target = targetId ? document.getElementById(targetId) : null;
+        if (!target) return;
+
+        const text = target.textContent.trim();
+        const originalText = copyButton.textContent;
+
+        try {
+            let copied = false;
+            let clipboardError = null;
+
+            if (navigator.clipboard && window.isSecureContext) {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    copied = true;
+                } catch (error) {
+                    clipboardError = error;
+                }
+            }
+
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'fixed';
+            textarea.style.left = '-9999px';
+            textarea.style.top = '0';
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            copied = document.execCommand('copy') || copied;
+            document.body.removeChild(textarea);
+
+            if (!copied) {
+                throw clipboardError || new Error('Copy command was rejected');
+            }
+
+            copyButton.textContent = '[Copied]';
+            setTimeout(() => {
+                copyButton.textContent = originalText;
+            }, 1600);
+        } catch (error) {
+            console.error('Failed to copy BibTeX:', error);
+        }
+    });
+}
+
+function safelyInitialize(name, initializer) {
+    try {
+        initializer();
+    } catch (error) {
+        console.error(`Failed to initialize ${name}:`, error);
+    }
+}
+
 // Load all partials when DOM is ready
 document.addEventListener('DOMContentLoaded', async function() {
     console.log('DOM Content Loaded');
@@ -168,11 +242,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         // Initialize after partials are loaded
         console.log('Initializing components');
-        initializeDarkMode();
-        initializeSmoothScroll();
-        initializeMobileMenu();
+        safelyInitialize('publication BibTeX', initializePublicationBibtex);
+        safelyInitialize('dark mode', initializeDarkMode);
+        safelyInitialize('smooth scroll', initializeSmoothScroll);
+        safelyInitialize('mobile menu', initializeMobileMenu);
         if (isIndexPage) {
-            updateFooterDates();
+            safelyInitialize('footer dates', updateFooterDates);
         }
         
         // Hide loading overlay

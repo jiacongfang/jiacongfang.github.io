@@ -1,3 +1,46 @@
 {
-  "publications": []
+  "publications": [
+    {
+      "year": 2026,
+      "title": "Enlightening Photographic Style Transfer with a Self-Supervised Photographic Embedding",
+      "projectUrl": "https://petal-pku.pages.dev/",
+      "thumbnail": "assets/images/publications/petal-thumbnail.jpg",
+      "authors": [
+        {
+          "name": "Chengxuan Zhu",
+          "url": "https://freebutuselesssoul.github.io/",
+          "equalContribution": true
+        },
+        {
+          "name": "Jiacong Fang",
+          "equalContribution": true,
+          "self": true
+        },
+        {
+          "name": "Shuchen Weng",
+          "url": "https://shuchenweng.github.io/"
+        },
+        {
+          "name": "Youwei Lyu",
+          "url": "https://youweilyu.github.io/"
+        },
+        {
+          "name": "Jiajun Tang"
+        },
+        {
+          "name": "Qingnan Fan",
+          "url": "https://fqnchina.github.io/"
+        },
+        {
+          "name": "Chao Xu"
+        },
+        {
+          "name": "Boxin Shi",
+          "url": "https://ci.idm.pku.edu.cn/"
+        }
+      ],
+      "venue": "In Proceedings of European Conference on Computer Vision (ECCV), 2026.",
+      "bibtex": "@inproceedings{zhu2026photographic,\n  title     = {Enlightening Photographic Style Transfer with a Self-Supervised Photographic Embedding},\n  author    = {Zhu, Chengxuan and Fang, Jiacong and Weng, Shuchen and Lyu, Youwei and Tang, Jiajun and Fan, Qingnan and Xu, Chao and Shi, Boxin},\n  booktitle = {Proceedings of the European Conference on Computer Vision},\n  year      = {2026}\n}"
+    }
+  ]
 }

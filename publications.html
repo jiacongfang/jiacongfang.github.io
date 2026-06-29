@@ -90,19 +90,55 @@
             <div id="header-placeholder"></div>
         </header>
 
-        <main class="container mx-auto px-4 py-8">
-            <h1 class="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Publications</h1>
-            
-            <!-- Publications content will go here -->
-            <div class="prose dark:prose-invert max-w-none">
-                <p class="text-gray-600 dark:text-gray-300">
-                    Coming soon...
-                </p>
-            </div>
+        <main class="container mx-auto px-4 py-8 pb-16">
+            <h1 class="text-4xl font-bold mb-2 text-gray-900 dark:text-white">Publications</h1>
+            <p class="mb-8 text-sm text-gray-600 dark:text-gray-300">(*: Equal Contribution)</p>
+
+            <section class="publication-year-section" aria-labelledby="publications-2026">
+                <h2 id="publications-2026" class="publication-year">2026</h2>
+
+                <article class="publication-entry">
+                    <a class="publication-thumb-link" href="https://petal-pku.pages.dev/" target="_blank" rel="noopener noreferrer" aria-label="Open PETAL project page">
+                        <img class="publication-thumb" src="assets/images/publications/petal-thumbnail.jpg" alt="PETAL photographic style transfer examples" loading="lazy">
+                    </a>
+
+                    <div class="publication-body">
+                        <h3 class="publication-title">
+                            <a href="https://petal-pku.pages.dev/" target="_blank" rel="noopener noreferrer">Enlightening Photographic Style Transfer with a Self-Supervised Photographic Embedding</a>
+                        </h3>
+                        <p class="publication-authors">
+                            <a href="https://freebutuselesssoul.github.io/" target="_blank" rel="noopener noreferrer">Chengxuan Zhu</a><sup>*</sup>,
+                            <strong>Jiacong Fang</strong><sup>*</sup>,
+                            <a href="https://shuchenweng.github.io/" target="_blank" rel="noopener noreferrer">Shuchen Weng</a>,
+                            <a href="https://youweilyu.github.io/" target="_blank" rel="noopener noreferrer">Youwei Lyu</a>,
+                            Jiajun Tang,
+                            <a href="https://fqnchina.github.io/" target="_blank" rel="noopener noreferrer">Qingnan Fan</a>,
+                            Chao Xu,
+                            <a href="https://ci.idm.pku.edu.cn/" target="_blank" rel="noopener noreferrer">Boxin Shi</a>
+                        </p>
+                        <p class="publication-venue">
+                            In <em>Proceedings of European Conference on Computer Vision (<strong>ECCV</strong>)</em>, 2026.
+                        </p>
+                        <div class="publication-link-row">
+                            <span>[<a href="https://petal-pku.pages.dev/" target="_blank" rel="noopener noreferrer">Project</a>]</span>
+                            <button type="button" class="publication-bibtex-toggle" aria-expanded="false" aria-controls="petal-bibtex-panel">[BibTeX]</button>
+                            <div id="petal-bibtex-panel" class="publication-bibtex-panel" hidden>
+                                <button type="button" class="publication-copy-bibtex" data-copy-target="petal-bibtex" aria-label="Copy BibTeX">[Copy]</button>
+                                <pre id="petal-bibtex" class="publication-bibtex-code">@inproceedings{zhu2026photographic,
+  title     = {Enlightening Photographic Style Transfer with a Self-Supervised Photographic Embedding},
+  author    = {Zhu, Chengxuan and Fang, Jiacong and Weng, Shuchen and Lyu, Youwei and Tang, Jiajun and Fan, Qingnan and Xu, Chao and Shi, Boxin},
+  booktitle = {Proceedings of the European Conference on Computer Vision},
+  year      = {2026}
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
         </main>
     </div>
 
     <!-- Scripts -->
-    <script src="scripts/app.js"></script>
+    <script src="scripts/app.js?v=20260629-03"></script>
 </body>
-</html> 
+</html>

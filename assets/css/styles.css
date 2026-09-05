@@ -1,5 +1,5 @@
 .english-name {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
     font-weight: 700;
     letter-spacing: 0;
 }
@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
     line-height: 1.65;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -91,7 +91,7 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Python IDE-inspired styling for headings - improved version */
 .python-heading {
     font-weight: normal; /* Remove bold */
-    font-family: 'Inter', sans-serif; /* Clean, modern font */
+    font-family: 'Lato', Verdana, Helvetica, sans-serif; /* Clean, modern font */
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
     line-height: 1.2;

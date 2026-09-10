@@ -3,19 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Moment - Jiacong Fang</title>
+    <title>Moments - Jiacong Fang</title>
     <link rel="icon" href="assets/icons/cat-icon.jpg" type="image/jpeg">
-    
-    <!-- Preload fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Mansalva&family=Montserrat:wght@300;400;500;600&display=swap" as="style">
-    <link rel="preload" href="https://fonts.gstatic.com/s/mansalva/v19/aWB4m0aacbtDfvq5NKliKYtI.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXp-p7K4KLg.woff2" as="font" type="font/woff2" crossorigin>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Mansalva&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
@@ -38,169 +28,498 @@
                         '3xl': '32px',
                         'full': '9999px',
                         'button': '8px'
-                    },
-                    fontFamily: {
-                        'mansalva': ['Mansalva', 'cursive'],
-                        'montserrat': ['Montserrat', 'sans-serif'],
-                        'caveat': ['Caveat', 'cursive']
                     }
                 }
             }
         }
     </script>
-    
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet">
+
     <!-- Remix Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Loading overlay + gallery styles -->
+    <style>
+      #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.3s;
+      }
+      .dark #loading-overlay { background-color: #1a202c; }
+      .loading-spinner {
+        width: 44px;
+        height: 44px;
+        border: 4px solid #e5e7eb;
+        border-top: 4px solid #306998;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+      /* Blur-up: keep the tiny placeholder painted behind the photo */
+      .photo-img { transition: opacity .7s ease, transform .6s cubic-bezier(.2,.6,.2,1), filter .3s ease; }
+      .photo-card:hover .photo-img { transform: scale(1.03); }
+      .photo-card:focus-visible { outline: 2px solid #306998; outline-offset: 3px; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .photo-img, .photo-card:hover .photo-img { transition: none !important; transform: none !important; }
+      }
+    </style>
 </head>
-<body class="bg-white dark:bg-gray-900">
-    <!-- Dark mode toggle and Duck icon - positioned outside max-width -->
-    <div class="fixed top-4 sm:top-6 left-4 sm:left-6 z-10 flex items-center space-x-3">
-        <button id="darkModeToggle" class="w-10 h-10 flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">
-            <i class="ri-moon-line text-gray-600 dark:text-gray-400 text-lg"></i>
-        </button>
+<body class="bg-white min-h-screen antialiased">
+    <!-- Loading overlay -->
+    <div id="loading-overlay">
+      <div class="loading-spinner"></div>
     </div>
 
-    <!-- Hero Section - Moved outside max-width wrapper -->
-    <section class="relative h-[20vh] w-full bg-cover bg-center bg-no-repeat" style="background-image: url('assets/artwork.jpg');">
-        <!-- Dark overlay to ensure text readability -->
-        <div class="absolute inset-0 bg-black/30"></div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <h1 class="font-mansalva text-4xl md:text-5xl mb-2">Enjoy & Relax</h1>
-            <p class="font-montserrat text-sm md:text-base font-light tracking-wider">A collection of moments</p>
-        </div>
-    </section>
-
-    <!-- Max-width wrapper -->
+    <!-- Shared header (loaded by scripts/app.js) -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Main Content -->
-        <main class="container mx-auto px-4 py-8">
-            <!-- Section 1: Cats -->
-            <section class="mb-20">
-                <h2 class="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-8">Cats in Peking University</h2>
-                <div class="relative max-w-3xl mx-auto">
-                    <div class="carousel-container overflow-hidden">
-                        <div class="carousel-track-cats flex transition-transform duration-500">
-                            <div class="carousel-slide min-w-full">
-                                <div class="aspect-[4/3] w-full max-w-3xl mx-auto">
-                                    <img src="assets/images/life/Cats/cat1_orange.jpg" alt="Cat photo 1" class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                            <div class="carousel-slide min-w-full">
-                                <div class="aspect-[4/3] w-full max-w-3xl mx-auto">
-                                    <img src="assets/images/life/Cats/cat3.jpg" alt="Cat photo 3" class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                            <div class="carousel-slide min-w-full">
-                                <div class="aspect-[4/3] w-full max-w-3xl mx-auto">
-                                    <img src="assets/images/life/Cats/cat4.jpg" alt="Cat photo 4" class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                            <div class="carousel-slide min-w-full">
-                                <div class="aspect-[4/3] w-full max-w-3xl mx-auto">
-                                    <img src="assets/images/life/Cats/cat5.jpg" alt="Cat photo 5" class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-prev-cats absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 dark:bg-gray-800/50 p-1.5 hover:bg-white/70 dark:hover:bg-gray-800/70 transition-colors">
-                        <i class="ri-arrow-left-s-line text-lg"></i>
-                    </button>
-                    <button class="carousel-next-cats absolute right-2 top-1/2 -translate-y-1/2 bg-white/50 dark:bg-gray-800/50 p-1.5 hover:bg-white/70 dark:hover:bg-gray-800/70 transition-colors">
-                        <i class="ri-arrow-right-s-line text-lg"></i>
-                    </button>
+        <header class="w-full">
+            <div id="header-placeholder"></div>
+        </header>
+    </div>
+
+    <main class="pb-16 sm:pb-24">
+        <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8">
+
+            <!-- Collection header -->
+            <section class="pt-8 pb-6 sm:pt-12 sm:pb-8">
+                <h1 class="text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl dark:text-white">A small collection of quiet moments</h1>
+                <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
+                    <span class="flex items-center gap-2">
+                        <img src="assets/icons/cat-icon.jpg" alt="" class="h-7 w-7 rounded-full object-cover">
+                        <span>Curated by
+                            <a href="index.html" class="font-medium text-gray-900 hover:underline dark:text-white">Jiacong Fang</a>
+                        </span>
+                    </span>
+                    <span class="hidden text-gray-300 sm:inline dark:text-gray-600">•</span>
+                    <span><span id="photo-count">0</span> photos</span>
+                    <span class="hidden text-gray-300 sm:inline dark:text-gray-600">•</span>
+                    <span>Photo credits: Jiacong Fang</span>
                 </div>
             </section>
 
-            <!-- Credits -->
-            <div class="mt-8 mb-4 text-right">
-                <p class="text-sm text-gray-500 dark:text-gray-400 font-montserrat">
-                    Photo credits: Jiacong Fang
-                </p>
+            <!-- Toolbar: topic filters + sort (sticky, Unsplash style) -->
+            <div class="sticky top-0 z-30 -mx-4 mb-5 border-b border-gray-100 bg-white/80 px-4 py-3 backdrop-blur-md sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 dark:border-gray-800 dark:bg-gray-900/80">
+                <div class="flex items-center gap-3">
+                    <div id="filterBar" class="flex min-w-0 flex-1 items-center gap-2 overflow-x-auto pb-1 sm:pb-0"></div>
+                    <div class="relative shrink-0">
+                        <select id="sortSelect" aria-label="Sort photos" class="cursor-pointer appearance-none rounded-full border border-gray-200 bg-white py-1.5 pl-3.5 pr-8 text-sm font-medium text-gray-700 transition hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:border-gray-600 dark:focus:ring-gray-600">
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="random">Random</option>
+                        </select>
+                        <i class="ri-arrow-down-s-line pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
             </div>
 
-            <!-- Quote -->
-            <!-- <div class="mt-20 mb-16 relative">
-                <blockquote class="mt-12 text-2xl md:text-3xl italic text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto leading-relaxed font-caveat">
-                    <span class="text-3xl md:text-4xl text-primary dark:text-secondary font-mansalva leading-none">"</span>
-                    When words become unclear, I shall focus with photographs.<br>
-                    When images become inadequate, I shall be content with silence.
-                    <span class="text-3xl md:text-4xl text-primary dark:text-secondary font-mansalva leading-none">"</span>
-                </blockquote>
-                <div class="mt-6 text-center">
-                    <p class="text-base text-gray-500 dark:text-gray-400 font-montserrat tracking-wider">— Ansel Adams</p>
+            <!-- Loading state -->
+            <div id="galleryLoading" class="flex justify-center py-24">
+                <div class="loading-spinner"></div>
+            </div>
+
+            <!-- Masonry gallery -->
+            <div id="gallery" class="hidden items-start gap-4 sm:gap-5 xl:gap-6"></div>
+
+            <!-- Empty state -->
+            <div id="emptyState" class="hidden flex-col items-center justify-center gap-3 py-24 text-center">
+                <i class="ri-image-line text-3xl text-gray-400"></i>
+                <p class="text-base font-medium text-gray-900 dark:text-white">No moments found</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Try a different search or topic.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shared footer (loaded by scripts/app.js) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-50 hidden flex-col bg-black/95 text-white backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <!-- Top bar -->
+        <div class="relative z-10 flex items-center justify-between gap-3 px-4 py-3 sm:px-6">
+            <div class="flex min-w-0 items-center gap-2.5">
+                <img src="assets/icons/cat-icon.jpg" alt="" class="h-8 w-8 rounded-full object-cover ring-1 ring-white/30">
+                <div class="min-w-0">
+                    <p class="truncate text-sm font-medium leading-tight">Jiacong Fang</p>
+                    <p id="lightboxDate" class="truncate text-xs leading-tight text-white/60"></p>
                 </div>
-            </div> -->
-        </main>
+            </div>
+            <div class="flex items-center gap-2">
+                <button type="button" id="lightboxLike" data-action="like" class="grid h-9 w-9 place-items-center rounded-md bg-white/10 text-white transition hover:bg-white/20" aria-label="Like photo">
+                    <i class="ri-heart-3-line"></i>
+                </button>
+                <a id="lightboxDownload" href="#" download class="grid h-9 w-9 place-items-center rounded-md bg-white/10 text-white transition hover:bg-white/20" aria-label="Download original">
+                    <i class="ri-download-2-line"></i>
+                </a>
+                <button type="button" id="lightboxClose" class="grid h-9 w-9 place-items-center rounded-md bg-white/10 text-white transition hover:bg-white/20" aria-label="Close viewer">
+                    <i class="ri-close-line text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Image stage -->
+        <div class="relative flex min-h-0 flex-1 items-center justify-center px-4 pb-28 pt-2 sm:px-16">
+            <button type="button" id="lightboxPrev" class="absolute left-2 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:left-4" aria-label="Previous photo">
+                <i class="ri-arrow-left-s-line text-2xl"></i>
+            </button>
+            <img id="lightboxImage" src="" alt="" class="max-h-full max-w-full select-none rounded-md object-contain ring-1 ring-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.11),0_30px_80px_-20px_rgba(0,0,0,0.95),0_0_74px_-10px_rgba(255,255,255,0.18)]">
+            <button type="button" id="lightboxNext" class="absolute right-2 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:right-4" aria-label="Next photo">
+                <i class="ri-arrow-right-s-line text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Location -->
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 pb-6 pt-16 text-center">
+            <p id="lightboxMeta" class="text-base font-medium text-white sm:text-lg"></p>
+        </div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- Toast -->
+    <div id="toast" class="pointer-events-none fixed bottom-6 left-1/2 z-[60] -translate-x-1/2 rounded-full bg-gray-900 px-4 py-2 text-sm font-medium text-white opacity-0 shadow-lg transition-opacity duration-300 dark:bg-white dark:text-gray-900"></div>
+
+    <!-- Scripts -->
+    <script src="scripts/app.js"></script>
     <script>
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        darkModeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-        });
+    (function () {
+        'use strict';
 
-        // Carousel functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            function initializeCarousel(track, slides, prevButton, nextButton) {
-                if (!track || !slides || slides.length === 0 || !prevButton || !nextButton) {
-                    return;
-                }
+        var AVATAR = 'assets/icons/cat-icon.jpg';
+        var LIKE_KEY = 'lifeLikes';
+        var categories = [{ id: 'all', label: 'All' }];
 
-                let currentIndex = 0;
-                const slideCount = slides.length;
+        var PHOTOS = [];
+        var visible = [];
+        var activeFilter = 'all';
+        var currentIndex = 0;
+        var columnCountCache = 0;
+        var liked = loadLikes();
+        var sortMode = 'newest';
+        var randomOrder = null;
 
-                // Clone first and last slides for infinite loop
-                const firstSlide = slides[0].cloneNode(true);
-                const lastSlide = slides[slideCount - 1].cloneNode(true);
-                track.appendChild(firstSlide);
-                track.insertBefore(lastSlide, slides[0]);
+        // Elements
+        var gallery = document.getElementById('gallery');
+        var galleryLoading = document.getElementById('galleryLoading');
+        var emptyState = document.getElementById('emptyState');
+        var photoCountEl = document.getElementById('photo-count');
+        var filterBar = document.getElementById('filterBar');
+        var sortSelect = document.getElementById('sortSelect');
+        var lightbox = document.getElementById('lightbox');
+        var lbImage = document.getElementById('lightboxImage');
+        var lbMeta = document.getElementById('lightboxMeta');
+        var lbDate = document.getElementById('lightboxDate');
+        var lbLike = document.getElementById('lightboxLike');
+        var lbDownload = document.getElementById('lightboxDownload');
+        var lbClose = document.getElementById('lightboxClose');
+        var lbPrev = document.getElementById('lightboxPrev');
+        var lbNext = document.getElementById('lightboxNext');
+        var toastEl = document.getElementById('toast');
 
-                // Set initial position
-                currentIndex = 1;
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                track.style.transition = 'transform 0.5s ease-in-out';
+        // ------------------------------------------------------------------
+        // Helpers
+        // ------------------------------------------------------------------
+        function esc(s) {
+            return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+                return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
+            });
+        }
+        function metaLine(p) {
+            return [p.location, p.dateLabel].filter(Boolean).join(' · ');
+        }
+        function photoAlt(p) {
+            var m = [p.location, p.dateLabel].filter(Boolean).join(', ');
+            return m ? ('Photo by Jiacong Fang — ' + m) : 'Photo by Jiacong Fang';
+        }
+        function loadLikes() {
+            try { return new Set(JSON.parse(localStorage.getItem(LIKE_KEY) || '[]')); }
+            catch (e) { return new Set(); }
+        }
+        function saveLikes() {
+            try { localStorage.setItem(LIKE_KEY, JSON.stringify(Array.from(liked))); } catch (e) {}
+        }
+        function toggleLike(id) {
+            if (liked.has(id)) liked.delete(id); else liked.add(id);
+            saveLikes();
+            updateLikeUI(id);
+        }
+        function attrEscape(s) {
+            return String(s).replace(/["\\]/g, '\\$&');
+        }
+        function updateLikeUI(id) {
+            var on = liked.has(id);
+            document.querySelectorAll('[data-action="like"][data-id="' + attrEscape(id) + '"]').forEach(function (btn) {
+                btn.setAttribute('aria-pressed', String(on));
+                var icon = btn.querySelector('i');
+                if (!icon) return;
+                icon.classList.toggle('ri-heart-3-fill', on);
+                icon.classList.toggle('ri-heart-3-line', !on);
+                icon.classList.toggle('text-red-500', on);
+            });
+        }
 
-                function updateSlidePosition(animate = true) {
-                    track.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
-                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
+        // ------------------------------------------------------------------
+        // Masonry rendering
+        // ------------------------------------------------------------------
+        function getColumnCount() {
+            var w = window.innerWidth;
+            if (w < 640) return 1;
+            if (w < 1024) return 2;
+            return 3;
+        }
 
-                function handleTransitionEnd() {
-                    if (currentIndex === 0) {
-                        currentIndex = slideCount;
-                        updateSlidePosition(false);
-                    } else if (currentIndex === slideCount + 1) {
-                        currentIndex = 1;
-                        updateSlidePosition(false);
-                    }
-                }
+        function likeButtonHTML(p, isLiked, size) {
+            var cls = 'grid ' + (size || 'h-8 w-8') + ' place-items-center rounded-md bg-white/90 text-gray-700 shadow-sm backdrop-blur transition hover:bg-white hover:text-gray-900 dark:bg-gray-900/80 dark:text-gray-200 dark:hover:bg-gray-900 dark:hover:text-white';
+            return '<button type="button" data-action="like" data-id="' + esc(p.id) + '" aria-pressed="' + isLiked + '" aria-label="Like photo" class="' + cls + '">' +
+                     '<i class="' + (isLiked ? 'ri-heart-3-fill text-red-500' : 'ri-heart-3-line') + '"></i>' +
+                   '</button>';
+        }
 
-                prevButton.addEventListener('click', () => {
-                    currentIndex--;
-                    updateSlidePosition();
-                });
+        function cardHTML(p, index) {
+            var isLiked = liked.has(p.id);
+            var meta = metaLine(p);
+            var alt = photoAlt(p);
+            return '' +
+              '<figure class="photo-card group relative" data-index="' + index + '" data-id="' + esc(p.id) + '" role="button" tabindex="0" aria-label="View photo' + (meta ? ': ' + esc(meta) : '') + '">' +
+                '<div class="relative overflow-hidden rounded-md bg-gray-100 ring-1 ring-black/10 shadow-[0_4px_12px_rgba(16,24,40,0.16),0_14px_32px_-10px_rgba(16,24,40,0.28)] transition duration-300 group-hover:-translate-y-1.5 group-hover:shadow-[0_22px_55px_-14px_rgba(16,24,40,0.48)] dark:bg-gray-800 dark:ring-white/15 dark:shadow-[0_0_30px_-8px_rgba(255,255,255,0.16)] dark:group-hover:shadow-[0_0_62px_-6px_rgba(255,255,255,0.32)]">' +
+                  '<img src="' + p.lqip + '" aria-hidden="true" alt="" class="pointer-events-none absolute inset-0 h-full w-full scale-110 object-cover blur-lg">' +
+                  '<img src="' + esc(p.src) + '" width="' + p.w + '" height="' + p.h + '" alt="' + esc(alt) + '" loading="lazy" decoding="async" ' +
+                       'class="photo-img relative block h-auto w-full opacity-0">' +
+                  '<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>' +
+                  '<div class="absolute right-2.5 top-2.5 flex items-center gap-1.5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 focus-within:opacity-100">' +
+                    likeButtonHTML(p, isLiked, 'h-8 w-8') +
+                    '<a href="' + esc(p.full) + '" download data-action="download" aria-label="Download photo" ' +
+                       'class="grid h-8 w-8 place-items-center rounded-md bg-white/90 text-gray-700 shadow-sm backdrop-blur transition hover:bg-white hover:text-gray-900 dark:bg-gray-900/80 dark:text-gray-200 dark:hover:bg-gray-900 dark:hover:text-white">' +
+                      '<i class="ri-download-2-line"></i>' +
+                    '</a>' +
+                  '</div>' +
+                  (meta ? '<figcaption class="pointer-events-none absolute inset-x-3 bottom-3 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">' +
+                    '<p class="truncate text-sm font-medium text-white drop-shadow">' + esc(p.location || p.dateLabel) + '</p>' +
+                    (p.location && p.dateLabel ? '<p class="mt-0.5 truncate text-xs text-white/75">' + esc(p.dateLabel) + '</p>' : '') +
+                  '</figcaption>' : '') +
+                '</div>' +
+              '</figure>';
+        }
 
-                nextButton.addEventListener('click', () => {
-                    currentIndex++;
-                    updateSlidePosition();
-                });
+        function revealImage(img) {
+            if (img.complete && img.naturalWidth > 0) {
+                img.classList.add('opacity-100');
+            } else {
+                img.addEventListener('load', function () { img.classList.add('opacity-100'); }, { once: true });
+            }
+        }
 
-                track.addEventListener('transitionend', handleTransitionEnd);
+        function renderGallery() {
+            var cols = getColumnCount();
+            columnCountCache = cols;
+
+            var columnEls = [];
+            var heights = [];
+            for (var c = 0; c < cols; c++) {
+                var col = document.createElement('div');
+                col.className = 'masonry-column min-w-0 flex-1 space-y-4 sm:space-y-5 xl:space-y-6';
+                columnEls.push(col);
+                heights.push(0);
             }
 
-            // Cats carousel
-            initializeCarousel(
-                document.querySelector('.carousel-track-cats'),
-                document.querySelectorAll('.carousel-track-cats .carousel-slide'),
-                document.querySelector('.carousel-prev-cats'),
-                document.querySelector('.carousel-next-cats')
-            );
+            visible.forEach(function (p, index) {
+                var target = 0;
+                for (var i = 1; i < heights.length; i++) {
+                    if (heights[i] < heights[target]) target = i;
+                }
+                heights[target] += p.h / p.w;
+                var wrap = document.createElement('div');
+                wrap.innerHTML = cardHTML(p, index);
+                columnEls[target].appendChild(wrap.firstElementChild);
+            });
+
+            gallery.replaceChildren.apply(gallery, columnEls);
+            gallery.querySelectorAll('.photo-img').forEach(revealImage);
+
+            var has = visible.length > 0;
+            gallery.classList.toggle('hidden', !has);
+            gallery.classList.toggle('flex', has);
+            emptyState.classList.toggle('hidden', has);
+            emptyState.classList.toggle('flex', !has);
+        }
+
+        function shuffle(arr) {
+            var a = arr.slice();
+            for (var i = a.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var t = a[i]; a[i] = a[j]; a[j] = t;
+            }
+            return a;
+        }
+        function sortPhotos(list) {
+            if (sortMode === 'random') {
+                var rank = {};
+                (randomOrder || []).forEach(function (id, i) { rank[id] = i; });
+                return list.slice().sort(function (a, b) {
+                    return (rank[a.id] === undefined ? 1e9 : rank[a.id]) - (rank[b.id] === undefined ? 1e9 : rank[b.id]);
+                });
+            }
+            var dir = sortMode === 'oldest' ? 1 : -1;
+            return list.slice().sort(function (a, b) {
+                if (!a.date && !b.date) return 0;
+                if (!a.date) return 1;   // undated photos always last
+                if (!b.date) return -1;
+                return dir * a.date.localeCompare(b.date);
+            });
+        }
+        function applyFilters() {
+            var filtered = PHOTOS.filter(function (p) {
+                return activeFilter === 'all' || p.category === activeFilter;
+            });
+            visible = sortPhotos(filtered);
+            renderGallery();
+        }
+
+        function titleCase(s) {
+            return String(s).replace(/[-_]+/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+        }
+        function deriveCategories(list) {
+            var present = [];
+            list.forEach(function (p) { if (present.indexOf(p.category) === -1) present.push(p.category); });
+            return [{ id: 'all', label: 'All' }].concat(present.map(function (c) { return { id: c, label: titleCase(c) }; }));
+        }
+        function buildFilters() {
+            filterBar.innerHTML = categories.map(function (c) {
+                return '<button type="button" class="filter-pill shrink-0 rounded-full bg-gray-100 px-4 py-1.5 text-sm font-medium text-gray-600 transition hover:bg-gray-200 aria-pressed:bg-gray-900 aria-pressed:text-white dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:aria-pressed:bg-white dark:aria-pressed:text-gray-900" data-filter="' + esc(c.id) + '" aria-pressed="' + (c.id === activeFilter) + '">' + esc(c.label) + '</button>';
+            }).join('');
+        }
+
+        // ------------------------------------------------------------------
+        // Lightbox
+        // ------------------------------------------------------------------
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightbox();
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            lbClose.focus();
+        }
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        function stepLightbox(delta) {
+            if (!visible.length) return;
+            currentIndex = (currentIndex + delta + visible.length) % visible.length;
+            updateLightbox();
+        }
+        function updateLightbox() {
+            var p = visible[currentIndex];
+            if (!p) return;
+            lbImage.src = p.src;
+            lbImage.alt = photoAlt(p);
+            lbDate.textContent = p.dateLabel || '';
+            lbMeta.textContent = p.location || '';
+            lbDownload.href = p.full;
+            lbLike.setAttribute('data-id', p.id);
+            updateLikeUI(p.id);
+            [-1, 1].forEach(function (off) {
+                var n = visible[(currentIndex + off + visible.length) % visible.length];
+                if (n && n !== p) { var pre = new Image(); pre.src = n.src; }
+            });
+        }
+
+        // ------------------------------------------------------------------
+        // Toast
+        // ------------------------------------------------------------------
+        var toastTimer = null;
+        function showToast(msg) {
+            toastEl.textContent = msg;
+            toastEl.style.opacity = '1';
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(function () { toastEl.style.opacity = '0'; }, 1800);
+        }
+
+        // ------------------------------------------------------------------
+        // Events
+        // ------------------------------------------------------------------
+        gallery.addEventListener('click', function (e) {
+            var action = e.target.closest('[data-action]');
+            if (action && action.dataset.action === 'like') { e.preventDefault(); toggleLike(action.dataset.id); return; }
+            if (action && action.dataset.action === 'download') { showToast('Downloading…'); return; }
+            var card = e.target.closest('.photo-card');
+            if (card) openLightbox(Number(card.dataset.index));
         });
+        gallery.addEventListener('keydown', function (e) {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            var card = e.target.closest('.photo-card');
+            if (!card || e.target.closest('[data-action]')) return;
+            e.preventDefault();
+            openLightbox(Number(card.dataset.index));
+        });
+        filterBar.addEventListener('click', function (e) {
+            var pill = e.target.closest('.filter-pill');
+            if (!pill) return;
+            activeFilter = pill.dataset.filter;
+            filterBar.querySelectorAll('.filter-pill').forEach(function (x) { x.setAttribute('aria-pressed', String(x === pill)); });
+            applyFilters();
+        });
+        sortSelect.addEventListener('change', function () {
+            sortMode = sortSelect.value;
+            if (sortMode === 'random') randomOrder = shuffle(PHOTOS.map(function (p) { return p.id; }));
+            applyFilters();
+        });
+        lbLike.addEventListener('click', function () { var p = visible[currentIndex]; if (p) toggleLike(p.id); });
+        lbDownload.addEventListener('click', function () { showToast('Downloading…'); });
+        lbClose.addEventListener('click', closeLightbox);
+        lbPrev.addEventListener('click', function () { stepLightbox(-1); });
+        lbNext.addEventListener('click', function () { stepLightbox(1); });
+        lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', function (e) {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowLeft') stepLightbox(-1);
+            else if (e.key === 'ArrowRight') stepLightbox(1);
+        });
+        var resizeTimer = null;
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () { if (getColumnCount() !== columnCountCache) renderGallery(); }, 150);
+        });
+
+        // ------------------------------------------------------------------
+        // Init
+        // ------------------------------------------------------------------
+        fetch('data/life.json', { cache: 'no-cache' })
+            .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+            .then(function (data) {
+                PHOTOS = (data && data.photos) || [];
+                categories = (data && data.categories && data.categories.length) ? data.categories : deriveCategories(PHOTOS);
+                photoCountEl.textContent = PHOTOS.length;
+                buildFilters();
+                applyFilters();
+            })
+            .catch(function (err) {
+                console.error('Failed to load moments:', err);
+                PHOTOS = [];
+                buildFilters();
+                applyFilters();
+            })
+            .finally(function () {
+                galleryLoading.classList.add('hidden');
+            });
+    })();
     </script>
 </body>
-</html> 
+</html>

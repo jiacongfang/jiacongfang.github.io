@@ -236,8 +236,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                 loadPartial('footer-placeholder', 'components/footer.html')
             ]);
         } else {
-            // For other pages, only load the header
+            // For other pages, load the shared header (and footer when present)
             await loadPartial('header-placeholder', 'components/header.html');
+            if (document.getElementById('footer-placeholder')) {
+                await loadPartial('footer-placeholder', 'components/footer.html');
+            }
         }
         
         // Initialize after partials are loaded
@@ -246,9 +249,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         safelyInitialize('dark mode', initializeDarkMode);
         safelyInitialize('smooth scroll', initializeSmoothScroll);
         safelyInitialize('mobile menu', initializeMobileMenu);
-        if (isIndexPage) {
-            safelyInitialize('footer dates', updateFooterDates);
-        }
+        safelyInitialize('footer dates', updateFooterDates);
         
         // Hide loading overlay
         const loadingOverlay = document.getElementById('loading-overlay');

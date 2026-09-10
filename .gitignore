@@ -13,5 +13,8 @@ Gemfile.lock
 node_modules
 package-lock.json
 
+# Nominatim reverse-geocoding cache (build-time only)
+scripts/.geocode-cache.json
+
 .DS_Store
 images/.DS_Store

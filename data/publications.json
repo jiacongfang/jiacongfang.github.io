@@ -2,6 +2,56 @@
   "publications": [
     {
       "year": 2026,
+      "title": "StreamAV-Bench: A Comprehensive Benchmark for Streaming Audio-Video Generation",
+      "projectUrl": "https://liukqchoco.github.io/StreamAVBench/",
+      "thumbnail": "assets/images/publications/streamavbench.png",
+      "authors": [
+        {
+          "name": "Kaiqi Liu",
+          "url": "https://liukqchoco.github.io/"
+        },
+        {
+          "name": "Haoxuan Zeng"
+        },
+        {
+          "name": "Jingqi Liu"
+        },
+        {
+          "name": "Jiacong Fang",
+          "self": true
+        },
+        {
+          "name": "Ziqi Cai"
+        },
+        {
+          "name": "Yunyao Mao"
+        },
+        {
+          "name": "Henglin Liu"
+        },
+        {
+          "name": "Yu Sheng"
+        },
+        {
+          "name": "Shuchen Weng",
+          "url": "https://shuchenweng.github.io/"
+        },
+        {
+          "name": "Boxin Shi",
+          "url": "https://ci.idm.pku.edu.cn/"
+        }
+      ],
+      "venue": "arXiv preprint arXiv:2608.26336, 2026",
+      "links": {
+        "Website": "https://liukqchoco.github.io/StreamAVBench/",
+        "Paper": "https://arxiv.org/pdf/2608.26336",
+        "Code": "https://github.com/liukqchoco/StreamAVBench-Code",
+        "Leaderboard": "https://huggingface.co/spaces/StreamAVBench/Leaderboard",
+        "Dataset": "https://huggingface.co/datasets/StreamAVBench/StreamAVBench"
+      }
+    },
+    {
+      "year": 2026,
       "title": "Enlightening Photographic Style Transfer with a Self-Supervised Photographic Embedding",
       "projectUrl": "https://petal-pku.pages.dev/",
       "thumbnail": "assets/images/publications/petal-thumbnail.jpg",
@@ -41,7 +91,10 @@
         }
       ],
       "venue": "In Proceedings of European Conference on Computer Vision (ECCV), 2026.",
-      "bibtex": "@inproceedings{zhu2026photographic,\n  title     = {Enlightening Photographic Style Transfer with a Self-Supervised Photographic Embedding},\n  author    = {Zhu, Chengxuan and Fang, Jiacong and Weng, Shuchen and Lyu, Youwei and Tang, Jiajun and Fan, Qingnan and Xu, Chao and Shi, Boxin},\n  booktitle = {Proceedings of the European Conference on Computer Vision},\n  year      = {2026}\n}"
+      "bibtex": "@inproceedings{zhu2026photographic,\n  title     = {Enlightening Photographic Style Transfer with a Self-Supervised Photographic Embedding},\n  author    = {Zhu, Chengxuan and Fang, Jiacong and Weng, Shuchen and Lyu, Youwei and Tang, Jiajun and Fan, Qingnan and Xu, Chao and Shi, Boxin},\n  booktitle = {Proceedings of the European Conference on Computer Vision},\n  year      = {2026}\n}",
+      "links": {
+        "Paper": "https://link.springer.com/chapter/10.1007/978-3-032-37490-5_2"
+      }
     }
   ]
 }
